@@ -8,7 +8,6 @@ cd stickbug <br />
 sudo python3 requirements.py <br />
 
 ## Usage and Example ##
-<br />
 sudo python3 stickbug.py<br />
 
 
