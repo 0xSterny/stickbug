@@ -65,7 +65,7 @@ def Find_psVariables():
             res = []
             [res.append(x) for x in v if x not in res]
             original = res
-            stopwords = ['$true', '$false', '$t']
+            stopwords = ['$true', '$false', '$t', '$f']
             found_var = [y for y in original if y not in stopwords]
             global replacements 
             replacements = found_var
