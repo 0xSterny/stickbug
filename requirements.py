@@ -9,6 +9,10 @@ def hoaxshell():
 def netifaces():
     os.system("pip install netifaces")
 
+def tmux():
+    os.system("sudo apt-get install tmux")
+
 if __name__ == "__main__":
     hoaxshell()
     netifaces()
+    tmux()
