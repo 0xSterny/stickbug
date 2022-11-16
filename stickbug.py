@@ -114,7 +114,7 @@ def main():
     os.system("sudo tmux a -t hoaxshell")
 
     #Clean up
-    os.system("sudo rm /tmp/payload.ps1 /tmp/obfuscated.ps1 /tmp/invokehoax.ps1 /tmp/obfuscated.txt")
+    os.system("sudo rm /tmp/payload.ps1 /tmp/obfuscated.ps1 /tmp/invokehoax.ps1")
     os.system("sudo tmux kill-session -t hoaxshell")
     input("Press enter to exit")
 
